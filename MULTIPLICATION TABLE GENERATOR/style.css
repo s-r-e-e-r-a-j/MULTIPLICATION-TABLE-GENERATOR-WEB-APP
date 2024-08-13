@@ -1,0 +1,14 @@
+div{
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:linear-gradient(rgba(34,56,78,0.567),rgba(45,67,86,0.567));
+}
+
+a{
+    padding:40px 40px;
+    font-size:30px;
+    border:10px solid black;
+}
