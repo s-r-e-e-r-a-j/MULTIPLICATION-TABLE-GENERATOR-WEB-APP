@@ -1,17 +1,24 @@
-let n=prompt("Enter The Number","Any Number");
-let limit=prompt("Enter The Limit","Any");
-let result="";
-   //coded by sreeraj
-for(let i=1;i<=limit;i++){
+// Coded by Sreeraj
 
-    result+=`${i} x ${n} = ${i*n}\n`;
+// Ask user for number and limit
+const n = parseInt(prompt("Enter the number for multiplication table:"), 10);
+const limit = parseInt(prompt("Enter the limit:"), 10);
+
+if (isNaN(n) || isNaN(limit)) {
+  alert("Please enter valid numbers!");
+} else {
+  let result = "";
+
+  for (let i = 1; i <= limit; i++) {
+    result += `${i} x ${n} = ${i * n}\n`;
+  }
+
+  alert(result);
+
+  // Create a downloadable file
+  const a = document.querySelector("#downloadLink");
+  const blob = new Blob([result], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  a.href = url;
+  a.download = `Multiplication_Table_${n}.txt`;
 }
-
-alert(result);  
-  
-const a=document.querySelector("#link");
- //blob=binary large object
-let blob=new Blob([result],{type:"text/plain"});
-let url=URL.createObjectURL(blob);
-a.href=url;
-a.download="Mul_table.txt"
